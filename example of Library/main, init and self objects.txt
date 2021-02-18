@@ -1,0 +1,4 @@
+main, init and self objects
+https://stackoverflow.com/questions/42353490/python-main-function-in-class 
+https://stackoverflow.com/questions/625083/what-init-and-self-do-on-python
+https://medium.com/python-features/understanding-if-name-main-in-python-a37a3d4ab0c3

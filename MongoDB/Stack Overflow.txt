@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/2943222/find-objects-between-two-dates-mongodb
+https://stackoverflow.com/questions/30087355/how-to-query-using-isodate-in-pymongo?rq=1
+https://pypi.org/project/isodate/

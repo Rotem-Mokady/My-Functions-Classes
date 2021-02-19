@@ -2,15 +2,18 @@ import numpy as np
 
 
 class MergeSort:
+    """
+    Specific class for merge sort method.
+    """
     def __init__(self, array):
-        self.array = array
+        self.array = [[i] for i in array]
         self.run = 0
         self.n = len(self.array)
 
     def switch(self, lst1, lst2):
         """
         The function takes two sorted lists and union them to one list.
-        The function also adds to self.run in any iteration for the efficiency check.
+        It also adds to self.run one point in any iteration for the efficiency check.
         """
         for i in range(len(lst1)):
             self.run += 1
@@ -28,8 +31,8 @@ class MergeSort:
 
     def main(self):
         """
-        The function sort a list with 'Algorithms' method, according to
-        recursion of divided by two.
+        The function sort an array with 'merge sort' method.
+        The recursion is based on divided by two until we arrive to zero.
         """
         while self.n:
             self.n = round(self.n / 2)
@@ -46,14 +49,25 @@ class MergeSort:
         return self.run
 
 
-def merge_sort(array):
-    array = [[i] for i in array]
-    run = MergeSort(array).main()
-    # Set run results in the global dict
-    return run
+class Sort:
+    def __init__(self, array):
+        self.array = array
+        self.n = len(self.array)
+        self.run = {
+            'bubble sort': 0,
+            'selection sort': 0,
+            'quick sort': 0,
+            'merge sort': 0,
+        }
+
+    def merge_sort(self):
+        array = self.array.copy()
+        run = MergeSort(array).main()
+        self.run['merge sort'] = run
+        return run
 
 
 if __name__ == '__main__':
 
     a = np.random.randint(1, 100, np.random.randint(1, 100))
-    print(merge_sort(a))
+    print(Sort(a).merge_sort())
